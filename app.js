@@ -1,7 +1,8 @@
 const d = document,
 $amount = d.querySelector('input'),
+$changeBtn = d.querySelector('.change-icon'),
 $selects = d.querySelectorAll('select'),
-$btn = d.querySelector('button'),
+$convertBtn = d.querySelector('button'),
 $result = d.querySelector('.result');
 let apiKey = '4717a11d37204e93a4679997';
 
@@ -58,7 +59,15 @@ async function getConversion(amount ,base, target){
 
 d.addEventListener('DOMContentLoaded', getCurrency);
 
-$btn.addEventListener('click', e => {
+$changeBtn.addEventListener('click', () => {
+    const firstValue = $selects[0].value,
+    secondValue = $selects[1].value;
+
+    $selects[0].value = secondValue;
+    $selects[1].value = firstValue;
+})
+
+$convertBtn.addEventListener('click', e => {
     let value = $amount.value;
     console.log(value)
     if(!value) {
