@@ -65,7 +65,7 @@ input {
     outline: none;
     font-size: 14px;
     padding-bottom: 5px;
-    flex: 1;
+    flex-grow: 1;
     margin-bottom: 20px;
 }
 
